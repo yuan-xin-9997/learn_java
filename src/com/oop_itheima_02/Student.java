@@ -1,7 +1,7 @@
 package com.oop_itheima_02;
 
 public class Student {
-    // 成员变量
+    // 成员变量）示例变量）
     String name;
     int age;
 
