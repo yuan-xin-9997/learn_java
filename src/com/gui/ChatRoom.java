@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class ChatRoom {
     public static void main(String[] args) {
+        // 窗体
         JFrame jf = new JFrame();
 
         jf.setTitle("用户登录");
