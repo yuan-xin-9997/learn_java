@@ -9,7 +9,6 @@ public class UserLoginFrame extends JFrame{
         //窗体初始化
         initFrame();
 
-
         // 绘制窗体
         printView();
 
