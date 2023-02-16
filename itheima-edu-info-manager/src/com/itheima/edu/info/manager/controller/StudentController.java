@@ -7,9 +7,13 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class StudentController {
+    private StudentService studentService = new StudentService();
+    private Scanner sc = new Scanner(System.in);
+
+
     // 开启学生管理系统，并展示学生管理系统菜单
     public void start() {
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         studentLoop: while (true){
             System.out.println("--------欢迎来到 <学生> 管理系统--------");
             System.out.println("请输入您的选择: 1.添加学生  2.删除学生  3.修改学生  4.查看学生  5.退出");
@@ -20,13 +24,16 @@ public class StudentController {
                     addStudent();
                     break;
                 case "2":
-                    System.out.println("删除");
+//                    System.out.println("删除");
+                    deleteStudentById();
                     break;
                 case "3":
-                    System.out.println("修改");
+//                    System.out.println("修改");
+                    updateStudent();
                     break;
                 case "4":
-                    System.out.println("查看");
+//                    System.out.println("查看");
+                    findAllStudent();
                     break;
                 case "5":
                     System.out.println("感谢您使用学生管理系统，再见！");
@@ -38,10 +45,105 @@ public class StudentController {
         }
     }
 
+    public void updateStudent() {
+        //
+        //
+        //
+        //
+        //
+        // 先判断是否有学生
+        // 调用业务员中的获取方法，得到学生的对象数组
+        Student[] stus = studentService.findAllStudent();
+
+        // 判断数组的内存地址，是否为null
+        if(stus == null){
+            System.out.println("查无信息，请添加后重试！");
+            return;
+        }
+
+        while(true){
+            // 1. 键盘录入要更新的学生ID
+            System.out.println("请输入要更新学生的ID：");
+            String Id = sc.next();
+            // 2. 判断id在容器中是否存在，如果不存在，需要一直录入
+            if(studentService.isExists(Id)){
+                System.out.println("请输入学生姓名");
+                String name = sc.next();
+                System.out.println("请输入学生年龄");
+                String age = sc.next();
+                System.out.println("请输入学生生日");
+                String birthday = sc.next();
+                // 2.将学生信息封装为学生对象
+                Student stu = new Student();
+                stu.setId(Id);
+                stu.setName(name);
+                stu.setAge(age);
+                stu.setBirthday(birthday);
+                // 3. 调用业务员中的deleteStudentById，根据ID更新学生
+                studentService.updateStudent(Id, stu);
+                // 4. 提示更新成功
+                System.out.println("更新成功");
+                break;
+            }else{
+                System.out.println("您输入的学生不存在，请重新输入");
+            }
+        }
+    }
+
+    public void deleteStudentById() {
+//        Scanner sc = new Scanner(System.in);
+        // 先判断是否有学生
+        // 调用业务员中的获取方法，得到学生的对象数组
+        Student[] stus = studentService.findAllStudent();
+
+        // 判断数组的内存地址，是否为null
+        if(stus == null){
+            System.out.println("查无信息，请添加后重试！");
+            return;
+        }
+
+        while(true){
+            // 1. 键盘录入要删除的学生ID
+            System.out.println("请输入要删除学生的ID：");
+            String Id = sc.next();
+            // 2. 判断id在容器中是否存在，如果不存在，需要一直录入
+            if(studentService.isExists(Id)){
+                // 3. 调用业务员中的deleteStudentById，根据ID删除学生
+                studentService.deleteStudentById(Id);
+                // 4. 提示删除成功
+                System.out.println("删除成功");
+                break;
+            }else{
+                System.out.println("您输入的学生不存在，请重新输入");
+            }
+        }
+    }
+
+    public void findAllStudent() {
+//        StudentService studentService = new StudentService();
+        // 1. 调用业务员中的获取方法，得到学生的对象数组
+        Student[] stus = studentService.findAllStudent();
+
+        // 2. 判断数组的内存地址，是否为null
+        if(stus == null){
+            System.out.println("查无信息，请添加后重试！");
+            return;
+        }
+        // 3. 遍历数组，获取学生信息并打印在控制台
+        System.out.println("学号\t\t姓名\t年龄\t生日");
+        for (int i = 0; i < stus.length; i++) {
+            Student stu = stus[i];
+            if(stu != null){
+                System.out.println(stu.getId()+"\t"+stu.getName()+"\t"+stu.getAge()+"\t\t"+stu.getBirthday());
+            }
+        }
+
+    }
+
     public void addStudent() {
-        StudentService studentService = new StudentService();
+//        StudentService studentService = new StudentService();
         // 1. 键盘接收学生信息
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         String id;
         while(true) {
             System.out.println("请输入学生id");

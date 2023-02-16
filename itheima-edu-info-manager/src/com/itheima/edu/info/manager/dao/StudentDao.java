@@ -41,4 +41,30 @@ public class StudentDao {
     public Student[] findAllStudent() {
         return stus;
     }
+
+    public void deleteStudentById(String id) {
+        // 1. 查找id所在容器所在的索引位置
+        int index = getIndex(id);
+        // 2. 将该索引位置，使用null元素进行替代
+        stus[index] = null;
+    }
+
+    public int getIndex(String id){
+        int index = -1;
+        for (int i = 0; i < stus.length; i++) {
+            Student stu = stus[i];
+            if(stu != null && stu.getId().equals(id)){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    public void updateStudent(String id, Student stu) {
+        // 1. 查找id在容器中的索引位置
+        int index = getIndex(id);
+        // 2. 将该索引位置，使用新的学生对象替换
+        stus[index] = stu;
+    }
 }
