@@ -10,7 +10,6 @@ public class StudentController {
     private StudentService studentService = new StudentService();
     private Scanner sc = new Scanner(System.in);
 
-
     // 开启学生管理系统，并展示学生管理系统菜单
     public void start() {
 //        Scanner sc = new Scanner(System.in);
@@ -46,77 +45,20 @@ public class StudentController {
     }
 
     public void updateStudent() {
-        //
-        //
-        //
-        //
-        //
-        // 先判断是否有学生
-        // 调用业务员中的获取方法，得到学生的对象数组
-        Student[] stus = studentService.findAllStudent();
-
-        // 判断数组的内存地址，是否为null
-        if(stus == null){
-            System.out.println("查无信息，请添加后重试！");
-            return;
-        }
-
-        while(true){
-            // 1. 键盘录入要更新的学生ID
-            System.out.println("请输入要更新学生的ID：");
-            String Id = sc.next();
-            // 2. 判断id在容器中是否存在，如果不存在，需要一直录入
-            if(studentService.isExists(Id)){
-                System.out.println("请输入学生姓名");
-                String name = sc.next();
-                System.out.println("请输入学生年龄");
-                String age = sc.next();
-                System.out.println("请输入学生生日");
-                String birthday = sc.next();
-                // 2.将学生信息封装为学生对象
-                Student stu = new Student();
-                stu.setId(Id);
-                stu.setName(name);
-                stu.setAge(age);
-                stu.setBirthday(birthday);
-                // 3. 调用业务员中的deleteStudentById，根据ID更新学生
-                studentService.updateStudent(Id, stu);
-                // 4. 提示更新成功
-                System.out.println("更新成功");
-                break;
-            }else{
-                System.out.println("您输入的学生不存在，请重新输入");
-            }
-        }
+        String Id = inputStudentId();
+        Student stu = inputStudentInfo(Id);
+        // 3. 调用业务员中的deleteStudentById，根据ID更新学生
+        studentService.updateStudent(Id, stu);
+        // 4. 提示更新成功
+        System.out.println("更新成功");
     }
 
     public void deleteStudentById() {
-//        Scanner sc = new Scanner(System.in);
-        // 先判断是否有学生
-        // 调用业务员中的获取方法，得到学生的对象数组
-        Student[] stus = studentService.findAllStudent();
-
-        // 判断数组的内存地址，是否为null
-        if(stus == null){
-            System.out.println("查无信息，请添加后重试！");
-            return;
-        }
-
-        while(true){
-            // 1. 键盘录入要删除的学生ID
-            System.out.println("请输入要删除学生的ID：");
-            String Id = sc.next();
-            // 2. 判断id在容器中是否存在，如果不存在，需要一直录入
-            if(studentService.isExists(Id)){
-                // 3. 调用业务员中的deleteStudentById，根据ID删除学生
-                studentService.deleteStudentById(Id);
-                // 4. 提示删除成功
-                System.out.println("删除成功");
-                break;
-            }else{
-                System.out.println("您输入的学生不存在，请重新输入");
-            }
-        }
+        String Id = inputStudentId();
+        // 3. 调用业务员中的deleteStudentById，根据ID删除学生
+        studentService.deleteStudentById(Id);
+        // 4. 提示删除成功
+        System.out.println("删除成功");
     }
 
     public void findAllStudent() {
@@ -137,13 +79,9 @@ public class StudentController {
                 System.out.println(stu.getId()+"\t"+stu.getName()+"\t"+stu.getAge()+"\t\t"+stu.getBirthday());
             }
         }
-
     }
 
     public void addStudent() {
-//        StudentService studentService = new StudentService();
-        // 1. 键盘接收学生信息
-//        Scanner sc = new Scanner(System.in);
         String id;
         while(true) {
             System.out.println("请输入学生id");
@@ -155,6 +93,35 @@ public class StudentController {
                 break;
             }
         }
+        Student stu = inputStudentInfo(id);
+        // 3. 将学生对象，传递给StudentService（业务员）类中的addStudent方法
+        boolean result = studentService.addStudent(stu);
+        // 4. 根据StudentService返回结果，打印提示
+        if(result){
+            System.out.println("添加成功");
+        }else{
+            System.out.println("添加失败");
+        }
+    }
+
+    public String inputStudentId(){
+        String id;
+        while(true){
+            //1. 键盘录入要删除的学生id
+            System.out.println("请输入学生id：");
+            id = sc.next();
+            // 2.判断id在容器中是否存在，如果不存在，则需要一直录入
+            boolean flag = studentService.isExists(id);
+            if(flag){
+                break;
+            }else{
+                System.out.println("您输入的学生ID不存在，请重新输入：");
+            }
+        }
+        return id;
+    }
+
+    public Student inputStudentInfo(String id){
         System.out.println("请输入学生姓名");
         String name = sc.next();
         System.out.println("请输入学生年龄");
@@ -167,13 +134,6 @@ public class StudentController {
         stu.setName(name);
         stu.setAge(age);
         stu.setBirthday(birthday);
-        // 3. 将学生对象，传递给StudentService（业务员）类中的addStudent方法
-        boolean result = studentService.addStudent(stu);
-        // 4. 根据StudentService返回结果，打印提示
-        if(result){
-            System.out.println("添加成功");
-        }else{
-            System.out.println("添加失败");
-        }
+        return stu;
     }
 }
