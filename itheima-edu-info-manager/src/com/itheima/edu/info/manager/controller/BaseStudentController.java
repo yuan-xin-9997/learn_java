@@ -5,12 +5,12 @@ import com.itheima.edu.info.manager.service.StudentService;
 
 import java.util.Scanner;
 
-public class BaseStudentController {
-    private StudentService studentService = new StudentService();
-    private Scanner sc = new Scanner(System.in);
+public abstract class BaseStudentController {
+    private final StudentService studentService = new StudentService();
+    private final Scanner sc = new Scanner(System.in);
 
     // 开启学生管理系统，并展示学生管理系统菜单
-    public void start() {
+    public final void start() {
 //        Scanner sc = new Scanner(System.in);
         studentLoop: while (true){
             System.out.println("--------欢迎来到 <学生> 管理系统--------");
@@ -43,7 +43,7 @@ public class BaseStudentController {
         }
     }
 
-    public void updateStudent() {
+    public final void updateStudent() {
         String Id = inputStudentId();
         Student stu = inputStudentInfo(Id);
         // 3. 调用业务员中的deleteStudentById，根据ID更新学生
@@ -52,7 +52,7 @@ public class BaseStudentController {
         System.out.println("更新成功");
     }
 
-    public void deleteStudentById() {
+    public final void deleteStudentById() {
         String Id = inputStudentId();
         // 3. 调用业务员中的deleteStudentById，根据ID删除学生
         studentService.deleteStudentById(Id);
@@ -60,7 +60,7 @@ public class BaseStudentController {
         System.out.println("删除成功");
     }
 
-    public void findAllStudent() {
+    public final void findAllStudent() {
 //        StudentService studentService = new StudentService();
         // 1. 调用业务员中的获取方法，得到学生的对象数组
         Student[] stus = studentService.findAllStudent();
@@ -80,7 +80,7 @@ public class BaseStudentController {
         }
     }
 
-    public void addStudent() {
+    public final void addStudent() {
         String id;
         while(true) {
             System.out.println("请输入学生id");
@@ -103,7 +103,7 @@ public class BaseStudentController {
         }
     }
 
-    public String inputStudentId(){
+    public final String inputStudentId(){
         String id;
         while(true){
             //1. 键盘录入要删除的学生id
@@ -120,8 +120,6 @@ public class BaseStudentController {
         return id;
     }
 
-    public Student inputStudentInfo(String id){
-        return null;
-    }
+    public abstract Student inputStudentInfo(String id);
 
 }

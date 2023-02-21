@@ -4,7 +4,7 @@ import com.itheima.edu.info.manager.domain.Student;
 
 import java.util.ArrayList;
 
-public class OtherStudentDao {
+public class OtherStudentDao implements BaseStudentDao{
     // 1.创建学生对象数组
     // static的特点
     //         被static修饰的成员，会被该类的所有对象所[共享]，是我们判断是否使用静态关键字的条件，类似于单例
@@ -24,11 +24,13 @@ public class OtherStudentDao {
         stus.add(stu2);
     }
 
+    @Override
     public boolean addStudent(Student stu) {
         stus.add(stu);
         return true;
     }
 
+    @Override
     public Student[] findAllStudent() {
         Student[] students = new Student[stus.size()];
         for (int i = 0; i < students.length; i++) {
@@ -37,6 +39,7 @@ public class OtherStudentDao {
         return students;
     }
 
+    @Override
     public void deleteStudentById(String id) {
         // 1. 查找id所在容器所在的索引位置
         int index = getIndex(id);
@@ -44,6 +47,7 @@ public class OtherStudentDao {
         stus.remove(index);
     }
 
+    @Override
     public int getIndex(String id){
         int index = -1;
         for (int i = 0; i < stus.size(); i++) {
@@ -56,6 +60,7 @@ public class OtherStudentDao {
         return index;
     }
 
+    @Override
     public void updateStudent(String id, Student stu) {
         // 1. 查找id在容器中的索引位置
         int index = getIndex(id);

@@ -2,7 +2,7 @@ package com.itheima.edu.info.manager.dao;
 
 import com.itheima.edu.info.manager.domain.Student;
 
-public class StudentDao {
+public class StudentDao implements BaseStudentDao {
     // 1.创建学生对象数组
     // static的特点
     //         被static修饰的成员，会被该类的所有对象所[共享]，是我们判断是否使用静态关键字的条件，类似于单例
@@ -13,7 +13,15 @@ public class StudentDao {
     //         静态方法中，没有this关键字。this需要在创建对象之后，才会存在，静态存在的时候，对象可能还没被创建
 
     private static Student[] stus = new Student[5];
+    static {
+        Student stu1 = new Student("heima001", "张三", "23", "1999-11-11");
+        Student stu2 = new Student("heima002", "李四", "25", "2000-11-11");
 
+        stus[0] = stu1;
+        stus[1] = stu2;
+    }
+
+    @Override
     public boolean addStudent(Student stu) {
         // 2. 添加学生到数组
         // 2.1 定义变量index为-1，假设数组已经全部存满，没有null的元素
@@ -38,10 +46,12 @@ public class StudentDao {
         }
     }
 
+    @Override
     public Student[] findAllStudent() {
         return stus;
     }
 
+    @Override
     public void deleteStudentById(String id) {
         // 1. 查找id所在容器所在的索引位置
         int index = getIndex(id);
@@ -49,6 +59,7 @@ public class StudentDao {
         stus[index] = null;
     }
 
+    @Override
     public int getIndex(String id){
         int index = -1;
         for (int i = 0; i < stus.length; i++) {
@@ -61,6 +72,7 @@ public class StudentDao {
         return index;
     }
 
+    @Override
     public void updateStudent(String id, Student stu) {
         // 1. 查找id在容器中的索引位置
         int index = getIndex(id);
