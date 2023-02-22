@@ -32,5 +32,21 @@ class Zi extends Fu {
 }
 
 
+/*
+interface Fu {
+    int num = 10;
 
+    public default void method(){
+        System.out.println("Fu.. method");
+    }
+}
+
+class Zi implements Fu {
+    int num = 20;
+    @Override
+    public void method(){
+        System.out.println("Zi.. method");
+    }
+}
+ */
 
