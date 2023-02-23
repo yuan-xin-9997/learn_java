@@ -29,6 +29,7 @@ public class Test5Innerclass {
         }.show();
 
         // 情况: 接口中存在多个方法
+        // 一种多态，Inter2是接口，后面的new后面的是接口的实现类
         Inter2 i = new Inter2() {
             @Override
             public void show1() {
@@ -47,7 +48,7 @@ public class Test5Innerclass {
 }
 
 interface Inter {
-    void show();
+    public abstract void show();
 }
 
 interface Inter2 {
