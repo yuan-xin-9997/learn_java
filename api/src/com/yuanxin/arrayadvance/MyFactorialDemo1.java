@@ -11,8 +11,14 @@ public class MyFactorialDemo1 {
         System.out.println(sum);
 
         int [] arr = new int[5];
-        if (arr instanceof Array){
-            System.out.println("hh");
-        }
+//        if (arr instanceof Array){
+//            System.out.println("hh");
+//        }
+
+        int [] arr1 = {1, 2, 3, 4};
+        System.out.println(arr1.length);
+
+//        Array arr2 = new Array();
+
     }
 }
