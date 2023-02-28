@@ -13,7 +13,7 @@ public class TestUp {
 
         cats.addAll(cats);
         cats.addAll(miniCats);
-        //showAnimal(animals);
+        //showAnimal(animals);// 报错，类型通配符上限限定了为Cat
         showAnimal(cats);
         showAnimal(miniCats);
 
@@ -26,6 +26,7 @@ public class TestUp {
      * @param list
      */
     public static void showAnimal(ArrayList<? extends Cat> list) {
+        // 类型通配符上限，不能使用add方法，因为不能确定原来的ArrayList是什么类型的元素
         //list.add(new Animal());
         //list.add(new Cat());
         //list.add(new MiniCat());

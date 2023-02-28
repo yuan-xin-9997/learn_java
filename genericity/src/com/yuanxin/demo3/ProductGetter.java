@@ -25,7 +25,7 @@ public class ProductGetter<E> {
     }
 
     /**
-     * 抽奖
+     * 抽奖，泛型类的成员方法不可以变成静态方法
      * @return
      */
     public E getProduct() {
@@ -34,12 +34,12 @@ public class ProductGetter<E> {
     }
 
     /**
-     * 定义泛型方法
+     * 定义泛型方法，泛型方法中的泛型标识和泛型类中的泛型标识没有任何关系
      * @param list 参数
-     * @param <T> 泛型标识，具体类型，由调用方法的时候来指定。
+     * @param <E> 泛型标识，具体类型，由调用方法的时候来指定。
      * @return
      */
-    public <T> T getProduct(ArrayList<T> list) {
+    public <E> E getProduct(ArrayList<E> list) {
         return list.get(random.nextInt(list.size()));
     }
 
@@ -52,21 +52,21 @@ public class ProductGetter<E> {
      * @param <E>
      * @param <K>
      */
-//    public static <E,E,K> void printType(E t, E e, K k) {
-//        System.out.println(t + "\t" + t.getClass().getSimpleName());
-//        System.out.println(e + "\t" + e.getClass().getSimpleName());
-//        System.out.println(k + "\t" + k.getClass().getSimpleName());
-//    }
+    public static <E,T,K> void printType(E t, T e, K k) {
+        System.out.println(t + "\t" + t.getClass().getSimpleName());
+        System.out.println(e + "\t" + e.getClass().getSimpleName());
+        System.out.println(k + "\t" + k.getClass().getSimpleName());
+    }
 
     /**
-     * 泛型可变参数的定义
+     * 泛型可变参数的定义，e作为参数，可以传递多个参数，类似Python args kargs
      * @param e
      * @param <E>
      */
-//    public static <E> void print(E... e){
-//        for (int i = 0; i < e.length; i++) {
-//            System.out.println(e[i]);
-//        }
-//    }
+    public static <E> void print(E... e){
+        for (int i = 0; i < e.length; i++) {
+            System.out.println(e[i]);
+        }
+    }
 
 }
