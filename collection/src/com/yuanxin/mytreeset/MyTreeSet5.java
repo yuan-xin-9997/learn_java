@@ -5,6 +5,7 @@ import java.util.TreeSet;
 
 public class MyTreeSet5 {
     public static void main(String[] args) {
+        // 匿名内部类
 //        TreeSet<String> ts = new TreeSet<>(new Comparator<String>() {
 //            @Override
 //            public int compare(String o1, String o2) {
@@ -14,6 +15,7 @@ public class MyTreeSet5 {
 //            }
 //        });
 
+        // lambda表达式
         TreeSet<String> ts = new TreeSet<>(
                 (String o1, String o2) -> {
                     int result = o1.length() - o2.length();
