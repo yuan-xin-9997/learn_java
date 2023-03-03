@@ -15,9 +15,12 @@ public class MyMap5 {
         Student s2 = new Student("dapang",22);
         Student s3 = new Student("xiaomei",22);
 
+        // 键 对象，值 String
         hm.put(s1,"江苏");
         hm.put(s2,"北京");
         hm.put(s3,"天津");
+
+        // 遍历HashMap
 
         //第一种：先获取到所有的键，再通过每一个键来找对应的值
         Set<Student> keys = hm.keySet();
@@ -35,8 +38,9 @@ public class MyMap5 {
             String value = entry.getValue();
             System.out.println(key + "----" + value);
         }
+
         System.out.println("===================================");
-        //第三种：
+        //第三种：HashMap的forEach方法
         hm.forEach(
                 (Student key, String value)->{
                     System.out.println(key + "----" + value);
