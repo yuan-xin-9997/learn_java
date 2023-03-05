@@ -33,7 +33,7 @@ public class MyStream7 {
                 .collect(Collectors.toList());
 
         System.out.println(list);
-
+        System.out.println("================");
 
         Set<Integer> set = list1.stream().filter(number -> number % 2 == 0)
                 .collect(Collectors.toSet());

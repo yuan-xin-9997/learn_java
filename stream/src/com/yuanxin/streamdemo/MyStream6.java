@@ -2,6 +2,7 @@ package com.yuanxin.streamdemo;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,6 +14,11 @@ import java.util.List;
  */
 public class MyStream6 {
     public static void main(String[] args) {
+        // 构造数据
+        // 方法一
+        // ArrayList<Integer> list = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9,10));
+
+        // 方法二
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
             list.add(i);
@@ -23,6 +29,8 @@ public class MyStream6 {
 //                    return i % 2 == 0;
 //                }
 //        )
+
+        // 中间方法filter
         list.stream().filter(number -> number % 2 == 0).forEach(number -> System.out.println(number));
         System.out.println("====================");
 

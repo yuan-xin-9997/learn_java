@@ -21,10 +21,13 @@ public class MyStream4 {
         list.add("谢广坤");
 
 
-        //method1(list);
-        //method2(list);
-        //method3();
-        //method4(list);
+        method1(list);
+        System.out.println("==================");
+        method2(list);
+        System.out.println("==================");
+        method3();
+        System.out.println("==================");
+        method4(list);
 
 
     }

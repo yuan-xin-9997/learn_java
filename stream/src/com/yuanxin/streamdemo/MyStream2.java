@@ -43,6 +43,7 @@ public class MyStream2 {
 
     private static void method3() {
         int [] arr = {1,2,3,4,5};
+        System.out.println(arr);
         Arrays.stream(arr).forEach(s-> System.out.println(s));
     }
 
