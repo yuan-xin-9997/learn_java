@@ -11,6 +11,7 @@ public class OutputDemo5 {
 
         //如果第二个参数为true,表示打开续写功能
         //那么创建对象的这行代码不会清空文件.
+
         FileOutputStream fos = new FileOutputStream("/Users/xinyuan/100-Major-专业-Pro/102-计算机科学软件、教程及文件/009-Java/learn_java/a.txt",true);
 
         fos.write(97);
