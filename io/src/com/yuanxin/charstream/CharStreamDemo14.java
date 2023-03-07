@@ -9,7 +9,8 @@ public class CharStreamDemo14 {
         //分析：
         //1.要把文件中的数据读取进来。
         BufferedReader br = new BufferedReader(new FileReader("charstream\\sort.txt"));
-        //输出流一定不能写在这里，因为会清空文件中的内容
+
+        //输出流一定不能写在这里，因为会清空文件中的内容！！！！
         //BufferedWriter bw = new BufferedWriter(new FileWriter("charstream\\sort.txt"));
 
         String line = br.readLine();

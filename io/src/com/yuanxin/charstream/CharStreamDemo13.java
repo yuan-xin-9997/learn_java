@@ -11,7 +11,7 @@ public class CharStreamDemo13 {
         //字符缓冲输入流BufferedReader： readLine 读一整行
 
         //创建对象
-        BufferedReader br = new BufferedReader(new FileReader("charstream\\a.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/xinyuan/100-Major-专业-Pro/102-计算机科学软件、教程及文件/009-Java/黑马Java/learn_java/a.txt"));
 
 
         //使用循环来进行改进

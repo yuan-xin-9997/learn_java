@@ -11,10 +11,10 @@ public class CharStreamDemo11 {
 
 
         //创建对象
-        BufferedWriter bw = new BufferedWriter(new FileWriter("charstream\\a.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/xinyuan/100-Major-专业-Pro/102-计算机科学软件、教程及文件/009-Java/黑马Java/learn_java/a.txt"));
 
 
-        //写出数据
+        //写数据
         bw.write("黑马程序员666");
         //跨平台的回车换行
         bw.newLine();

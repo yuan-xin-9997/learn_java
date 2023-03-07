@@ -12,17 +12,17 @@ public class CharStreamDemo8 {
         //分析：
         //1，实现键盘录入，把用户名和密码录入进来
         Scanner sc = new Scanner(System.in);
-        System.out.println("请录入用户名");
+        System.out.println("请录入用户名：");
         String username = sc.next();
-        System.out.println("请录入密码");
+        System.out.println("请录入密码：");
         String password = sc.next();
 
         //2.分别把用户名和密码写到本地文件。
-        FileWriter fw = new FileWriter("charstream\\a.txt");
+        FileWriter fw = new FileWriter("/Users/xinyuan/100-Major-专业-Pro/102-计算机科学软件、教程及文件/009-Java/黑马Java/learn_java/a.txt");
         //将用户名和密码写到文件中
         fw.write(username);
         //表示写出一个回车换行符 windows \r\n  MacOS \r  Linux \n
-        fw.write("\r\n");
+        fw.write("\r");
         fw.write(password);
         //刷新流
         fw.flush();
