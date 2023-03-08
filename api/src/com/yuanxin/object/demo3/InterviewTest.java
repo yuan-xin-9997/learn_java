@@ -6,9 +6,12 @@ public class InterviewTest {
         StringBuilder sb = new StringBuilder("abc");
         //1.此时调用的是String类中的equals方法.
         //保证参数也是字符串,否则不会比较属性值而直接返回false
-        //System.out.println(s1.equals(sb));
+        System.out.println(s1.equals(sb));
 
         //StringBuilder类中是没有重写equals方法,用的就是Object类中的.
         System.out.println(sb.equals(s1));
+
+        sb.append("hhh");
+        System.out.println(sb);
     }
 }

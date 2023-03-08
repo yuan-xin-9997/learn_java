@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class PropertiesDemo4 {
     public static void main(String[] args) throws IOException {
-        //void load​(Reader reader)                     将本地文件中的键值对数据读取到集合中
-        //void store​(Writer writer, String comments)   将集合中的数据以键值对形式保存在本地
+        //void load(Reader reader)                     将本地文件中的键值对数据读取到集合中
+        //void store(Writer writer, String comments)   将集合中的数据以键值对形式保存在本地
 
 
         Properties prop = new Properties();
@@ -17,7 +17,7 @@ public class PropertiesDemo4 {
         prop.put("wangwu","789");
 
         FileWriter fw = new FileWriter("prop.properties");
-        prop.store(fw,null);
+        prop.store(fw,"abc");
         fw.close();
 
 
