@@ -1,7 +1,7 @@
 package com.yuanxin.threaddemo014;
 
 public class Demo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         /*消费者步骤：
         1，判断桌子上是否有汉堡包。
         2，如果没有就等待。
@@ -23,6 +23,9 @@ public class Demo {
 
         f.start();
         c.start();
+
+//        Object o = new Object();
+//        o.wait();
 
     }
 }
