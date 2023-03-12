@@ -1,0 +1,7 @@
+<!--下面是定义元素的格式-->
+<!ELEMENT personsh (person+)>
+<!ELEMENT person (name,age)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!--下面定义一个属性-->
+<!ATTLIST person idoo CDATA #REQUIRED>

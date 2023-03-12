@@ -2,14 +2,14 @@ package com.yuanxin.system;
 
 public class SystemDemo {
     public static void main(String[] args) {
-//        public static void exit​(int status)	终止当前运行的 Java 虚拟机，非零表示异常终止
+//        public static void exit(int status)	终止当前运行的 Java 虚拟机，非零表示异常终止
         System.out.println(111);
         //while(true){}
 //        System.exit(0);  //当代码执行到这个方法的时候,就表示虚拟机已经停止了
 //        System.out.println(2222);
 
 
-//        public static long currentTimeMillis​()  返回当前时间(以毫秒为单位)
+//        public static long currentTimeMillis()  返回当前时间(以毫秒为单位)
         long start = System.currentTimeMillis();//获取当前时间
         System.out.println(start);
         for (int i = 0; i < 10000; i++) {
