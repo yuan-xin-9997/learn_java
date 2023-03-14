@@ -16,17 +16,23 @@ public class JDBCDemo {
         //2. 获取连接
         com.yuanxin.connect_db.Connection connection = new com.yuanxin.connect_db.Connection();
 //        String url = "jdbc:mysql://127.0.0.1:3306/db1";
-        String url = "jdbc:mysql://" + connection.getHost() + ":" + connection.getPort() + "/" + connection.getDatabase() + "?useSSL=true";
+        String url = "jdbc:mysql://" + connection.getHost() + ":" + connection.getPort() + "/" + connection.getDatabase();
         System.out.println(url);
         String username = connection.getUser();
         String password = connection.getPassword();
         Connection conn = DriverManager.getConnection(url, username, password);
         //3. 定义sql
-        String sql = "select * from sch_yard_allocation_plan";
+//        String sql = "select * from sch_yard_allocation_plan";
+//        String sql = "show databases;";
+//        String sql = "update student set name='yuanxin' where id=1";
+        String sql = "insert student values(1, 'yuanxin', 100.0)";
+
         //4. 获取执行sql的对象 Statement
         Statement stmt = conn.createStatement();
         //5. 执行sql
-        ResultSet count = stmt.executeQuery(sql);//受影响的行数
+//        ResultSet count = stmt.executeQuery(sql);//受影响的行数
+        int count = stmt.executeUpdate(sql);//受影响的行数
+
         //6. 处理结果
         System.out.println(count);
         //7. 释放资源

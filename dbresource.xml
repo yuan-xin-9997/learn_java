@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<connections>
+<!--    <connection>-->
+<!--        <host>10.168.2.207</host>-->
+<!--        <port>3306</port>-->
+<!--        <user>miluofwk</user>-->
+<!--        <password>fwkmiluo</password>-->
+<!--        <database>smarttos_prod</database>-->
+<!--    </connection>-->
+
+    <connection>
+        <host>119.91.110.54</host>
+        <port>13306</port>
+        <user>root</user>
+        <password>fwkmiluo</password>
+        <database>heima_java</database>
+    </connection>
+</connections>

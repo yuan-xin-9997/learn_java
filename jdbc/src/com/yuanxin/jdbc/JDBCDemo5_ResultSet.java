@@ -24,13 +24,16 @@ public class JDBCDemo5_ResultSet {
        //1. 注册驱动
        //Class.forName("com.mysql.jdbc.Driver");
        //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-       String url = "jdbc:mysql:///db1?useSSL=false";
-       String username = "root";
-       String password = "1234";
-       Connection conn = DriverManager.getConnection(url, username, password);
+        com.yuanxin.connect_db.Connection connection = new com.yuanxin.connect_db.Connection();
+//        String url = "jdbc:mysql://127.0.0.1:3306/db1";
+        String url = "jdbc:mysql://" + connection.getHost() + ":" + connection.getPort() + "/" + connection.getDatabase();
+        System.out.println(url);
+        String username = connection.getUser();
+        String password = connection.getPassword();
+        Connection conn = DriverManager.getConnection(url, username, password);
 
        //3. 定义sql
-        String sql = "select * from account";
+        String sql = "select * from student";
 
         //4. 获取statement对象
         Statement stmt = conn.createStatement();
@@ -59,7 +62,7 @@ public class JDBCDemo5_ResultSet {
             //6.2 获取数据  getXxx()
             int id = rs.getInt("id");
             String name = rs.getString("name");
-            double money = rs.getDouble("money");
+            double money = rs.getDouble("score");
 
             System.out.println(id);
             System.out.println(name);
@@ -93,13 +96,15 @@ public class JDBCDemo5_ResultSet {
         //1. 注册驱动
         //Class.forName("com.mysql.jdbc.Driver");
         //2. 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
-        String url = "jdbc:mysql:///db1?useSSL=false";
-        String username = "root";
-        String password = "1234";
+        com.yuanxin.connect_db.Connection connection = new com.yuanxin.connect_db.Connection();
+        String url = "jdbc:mysql://" + connection.getHost() + ":" + connection.getPort() + "/" + connection.getDatabase();
+        System.out.println(url);
+        String username = connection.getUser();
+        String password = connection.getPassword();
         Connection conn = DriverManager.getConnection(url, username, password);
 
         //3. 定义sql
-        String sql = "select * from account";
+        String sql = "select * from student";
 
         //4. 获取statement对象
         Statement stmt = conn.createStatement();
@@ -117,12 +122,12 @@ public class JDBCDemo5_ResultSet {
             //6.2 获取数据  getXxx()
             int id = rs.getInt("id");
             String name = rs.getString("name");
-            double money = rs.getDouble("money");
+            double money = rs.getDouble("score");
 
             //赋值
             account.setId(id);
             account.setName(name);
-            account.setMoney(money);
+            account.setScore(money);
 
             // 存入集合
             list.add(account);

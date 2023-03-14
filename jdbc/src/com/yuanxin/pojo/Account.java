@@ -4,7 +4,7 @@ public class Account {
 
     private int id;
     private String name;
-    private double money;
+    private double score;
 
     public int getId() {
         return id;
@@ -22,12 +22,12 @@ public class Account {
         this.name = name;
     }
 
-    public double getMoney() {
-        return money;
+    public double getScore() {
+        return score;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public void setScore(double score) {
+        this.score = score;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Account {
         return "Account{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", money=" + money +
+                ", score=" + score +
                 '}';
     }
 }
