@@ -10,7 +10,7 @@ package com.yuanxin.pojo;
 
 public class Brand {
     // id 主键
-    private Integer id;
+    private Integer id;  // 这里不推荐使用int基本数据类型，因为默认值为0，有业务含义，使用包装数据类型，尽管有默认值null，但是不影响
     // 品牌名称
     private String brandName;
     // 企业名称
