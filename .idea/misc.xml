@@ -9,10 +9,11 @@
       <list>
         <option value="$PROJECT_DIR$/maven-demo/pom.xml" />
         <option value="$PROJECT_DIR$/maven-web-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../../100-Major-专业/102-计算机科学软件、教程及文件/009-Java/黑马Java/阶段4代码资料/spring/1-spring/day01/代码/spring_02_base_config/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

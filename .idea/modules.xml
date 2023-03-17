@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/abstract/src/abstract.iml" filepath="$PROJECT_DIR$/abstract/src/abstract.iml" />
-      <module fileurl="file://$PROJECT_DIR$/abstract/abstract1.iml" filepath="$PROJECT_DIR$/abstract/abstract1.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/classloader/classloader.iml" filepath="$PROJECT_DIR$/classloader/classloader.iml" />
