@@ -10,6 +10,13 @@
         <option value="$PROJECT_DIR$/maven-demo/pom.xml" />
         <option value="$PROJECT_DIR$/maven-web-demo/pom.xml" />
         <option value="$PROJECT_DIR$/sprint_01_quick_start/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_02_base_config/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_01_quick_start/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_03_bean_instance/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_04_bean_lifecycle/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_05_di_set/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_06_di_constructor/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_07_di_autoware/pom.xml" />
       </list>
     </option>
   </component>
