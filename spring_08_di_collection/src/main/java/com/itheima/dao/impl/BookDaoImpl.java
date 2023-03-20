@@ -45,7 +45,7 @@ public class BookDaoImpl implements BookDao {
     public void save() {
         System.out.println("book dao save ...");
 
-        System.out.println("遍历数组:" + Arrays.toString(array));
+        System.out.println("遍历数组" + Arrays.toString(array));
 
         System.out.println("遍历List" + list);
 
