@@ -22,10 +22,11 @@
         <option value="$PROJECT_DIR$/spring_10_container/pom.xml" />
         <option value="$PROJECT_DIR$/spring_11_annotation_bean/pom.xml" />
         <option value="$PROJECT_DIR$/spring_13_annotation_di/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
