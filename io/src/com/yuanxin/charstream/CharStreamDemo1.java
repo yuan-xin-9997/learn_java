@@ -2,10 +2,6 @@ package com.yuanxin.charstream;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-/*
-为什么有了字节流，还要字符流
-是因为，字节流中文会乱码
- */
 
 public class CharStreamDemo1 {
     public static void main(String[] args) throws IOException {
